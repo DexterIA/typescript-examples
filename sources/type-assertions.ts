@@ -34,7 +34,7 @@ class Student {
 }
 
 let student1 = new Student('Vasya', new Diploma('copy/paste')),
-  student2 = new Student('Petya', new Diploma('nety'));
+    student2 = new Student('Petya', new Diploma('nety'));
 
 delete student1.diploma;
 
