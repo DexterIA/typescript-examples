@@ -18,7 +18,7 @@ namespace DefaultParameters {
   console.log(getFullName(undefined, 'Лукашенко', 'Григорьевич'));
 
   // Лукашенко null Григорьевич
-  console.log(getFullName(null, 'Лукашенко', 'Григорьевич'));
+  console.log(getFullName('', 'Лукашенко', 'Григорьевич'));
 
   // Лукашенко Александр Сергеевич
   console.log(getFullName(void 0, 'Лукашенко'));

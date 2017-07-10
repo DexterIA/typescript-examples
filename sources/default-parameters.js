@@ -9,7 +9,7 @@ var DefaultParameters;
     console.log(getFullName());
     console.log(getFullName('Лукашенко'));
     console.log(getFullName(undefined, 'Лукашенко', 'Григорьевич'));
-    console.log(getFullName(null, 'Лукашенко', 'Григорьевич'));
+    console.log(getFullName('', 'Лукашенко', 'Григорьевич'));
     console.log(getFullName(void 0, 'Лукашенко'));
     console.log(getFullName());
 })(DefaultParameters || (DefaultParameters = {}));

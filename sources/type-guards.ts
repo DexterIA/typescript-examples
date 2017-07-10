@@ -1,20 +1,52 @@
-class Pet {
-  constructor(public limbCount: number) {}
+import {Bird, Cat, Dog, Fish} from './services/pet';
+
+function getBirdOrFish (needBird: boolean): Bird | Fish {
+  return needBird ? new Bird() : new Fish();
 }
 
-enum FishHabitat {
-  FRESH_WATER,
-  SEA_WATER
+function isFish(pet: Fish | Bird): pet is Fish {
+  return (<Fish>pet).swim !== undefined;
 }
 
-class Fish {
-  constructor(public habitat: FishHabitat) {}
+let pet = getBirdOrFish(true);
+
+if (isFish(pet)) {
+  pet.swim();
+} else {
+  pet.fly();
 }
 
+/*
 
-console.log(isFish(new Fish(FishHabitat.FRESH_WATER)));
-console.log(isFish(new Pet(4)));
 
-function isFish(animal: Fish | Pet):animal is Fish {
-  return (animal as Fish).habitat !== undefined;
+*/
+
+function padLeft(value: string, padding: string | number) {
+  if (typeof padding === 'number') {
+    return Array(padding + 1).join(' ') + value;
+  }
+  if (typeof padding === 'string') {
+    return padding + value;
+  }
 }
+
+padLeft(':PAD', 7);
+padLeft(':PAD', 'padding ');
+
+/*
+
+
+ */
+
+function callPetMethod(pet: any) {
+  if (pet instanceof Dog) {
+    pet.bark();
+  }
+
+  if (pet instanceof Cat) {
+    pet.purr();
+  }
+}
+
+callPetMethod(new Dog());
+callPetMethod(new Cat());
